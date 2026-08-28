@@ -47,7 +47,7 @@ jobs:
       # no NPM_TOKEN — auth comes from the OIDC id-token; provenance is generated.
       - name: Publish (npm OIDC Trusted Publishing)
         env:
-          NODE_AUTH_TOKEN: '' # any set token disables the OIDC exchange
+          HUSKY: 0
         run: |
           echo "npm: $(npm --version)"
           echo "OIDC id-token URL present: ${ACTIONS_ID_TOKEN_REQUEST_URL:+YES}"
