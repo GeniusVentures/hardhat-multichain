@@ -1,16 +1,16 @@
 {
-  "name": "@diamondslab/hardhat-multichain",
-  "version": "1.1.0",
+  "name": "@geniusventures/hardhat-multichain",
+  "version": "1.1.0-gv",
   "description": "A Hardhat plugin for launching multiple forked blockchains",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DiamondsLab/hardhat-multichain.git"
+    "url": "git+https://github.com/GeniusVentures/hardhat-multichain.git"
   },
-  "homepage": "https://github.com/diamondslab/hardhat-multichain#readme",
+  "homepage": "https://github.com/GeniusVentures/hardhat-multichain#readme",
   "bugs": {
-    "url": "https://github.com/diamondslab/hardhat-multichain/issues"
+    "url": "https://github.com/GeniusVentures/hardhat-multichain/issues"
   },
   "keywords": [
     "ethereum",

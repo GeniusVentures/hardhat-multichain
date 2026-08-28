@@ -1,4 +1,4 @@
-# Contributing to `@diamondslab/hardhat-multichain`
+# Contributing to `@geniusventures/hardhat-multichain`
 
 Thanks for your interest in contributing! This guide covers how to propose changes.
 

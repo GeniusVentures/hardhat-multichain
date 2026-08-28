@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea or enhancement for @diamondslab/hardhat-multichain
+about: Suggest an idea or enhancement for @geniusventures/hardhat-multichain
 title: "[Feature] "
 labels: enhancement
 ---

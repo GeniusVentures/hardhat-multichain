@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **BREAKING:** Package renamed from `hardhat-multichain` to
-  `@diamondslab/hardhat-multichain`. See the
+  `@geniusventures/hardhat-multichain`. See the
   [migration guide in the README](README.md#migrating-from-hardhat-multichain). The old
   unscoped package will be deprecated on npm (not unpublished) after this release ships.
 - Lifecycle scripts (`prepublishOnly`, `prepack`) are now yarn-based; the package is

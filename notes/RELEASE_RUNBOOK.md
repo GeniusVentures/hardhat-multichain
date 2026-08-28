@@ -1,10 +1,10 @@
-# Release Runbook — `@diamondslab/hardhat-multichain`
+# Release Runbook — `@geniusventures/hardhat-multichain`
 
 Tag-triggered OIDC publish (`.github/workflows/release.yml`). **[Eng]** = any
-maintainer; **[Owner]** = DiamondsLab org admin + npm `@diamondslab` access.
+maintainer; **[Owner]** = GeniusVentures org admin + npm `@geniusventures` access.
 
-- **Package:** `@diamondslab/hardhat-multichain` (public) · **Registry:** npmjs.com
-- **Repo:** <https://github.com/DiamondsLab/hardhat-multichain> (submodule of diamonds-dev-env)
+- **Package:** `@geniusventures/hardhat-multichain` (public) · **Registry:** npmjs.com
+- **Repo:** <https://github.com/GeniusVentures/hardhat-multichain> (submodule of diamonds-dev-env)
 - **Toolchain:** Node ≥ 18 (`engines`), Yarn 4.10.3 · **Tag = publish trigger**
 - This repo has **no git hooks** (instant push). No standalone `yarn.lock` — CI/publish
   use `yarn install --no-immutable`.
@@ -20,8 +20,8 @@ maintainer; **[Owner]** = DiamondsLab org admin + npm `@diamondslab` access.
 - [ ] Clean tree on `release/vX.Y.Z`.
 - [ ] `yarn build && yarn lint && yarn test` green locally.
 - [ ] CI green on origin (Actions).
-- [ ] **[Owner]** npm Trusted Publisher for `@diamondslab/hardhat-multichain` bound to
-      `DiamondsLab/hardhat-multichain` + `release.yml`, **exact org casing** (`DiamondsLab`
+- [ ] **[Owner]** npm Trusted Publisher for `@geniusventures/hardhat-multichain` bound to
+      `GeniusVentures/hardhat-multichain` + `release.yml`, **exact org casing** (`GeniusVentures`
       — a lowercase letter costs a masked 404), **"Allow npm Stage publish" on**.
       **New package:** the trusted publisher may need the package to exist first — see §6b.
 - [ ] **[Owner]** §B rulesets on the repo; branch protection; `v*` tag protection with a
@@ -67,12 +67,12 @@ git tag vX.Y.Z && git push origin vX.Y.Z
 ```
 
 > If the pre-push is blocked or a ruleset rejects the tag, the Owner can create the ref via
-> `gh api repos/DiamondsLab/hardhat-multichain/git/refs -f ref=refs/tags/vX.Y.Z -f sha=<sha>`.
+> `gh api repos/GeniusVentures/hardhat-multichain/git/refs -f ref=refs/tags/vX.Y.Z -f sha=<sha>`.
 
 ## 5. Verify — [Owner/Eng]
 
 - [ ] `Release` workflow green.
-- [ ] `npm view @diamondslab/hardhat-multichain version` → `X.Y.Z`; provenance badge.
+- [ ] `npm view @geniusventures/hardhat-multichain version` → `X.Y.Z`; provenance badge.
 - [ ] Clean install resolves `.` + `./package.json`.
 - [ ] **Diagnose a publish failure** with `npm publish --loglevel http`: GitHub id-token
       GET 200 then registry `oidc/token/exchange` POST **404** = npm-side trusted-publisher
@@ -88,7 +88,7 @@ Then root `yarn compile` + consumer-green fast+full.
 
 ## 6b. First publish of this NEW npm name (bootstrap)
 
-`@diamondslab/hardhat-multichain` has never been published, so a trusted publisher may have
+`@geniusventures/hardhat-multichain` has never been published, so a trusted publisher may have
 nothing to bind to. Choose one:
 1. **npm new-package trusted-publisher flow** if the npmjs.com UI offers it → normal §4.
 2. **Token bootstrap:** **[Owner]** creates a short-lived granular automation token,
@@ -101,16 +101,16 @@ nothing to bind to. Choose one:
 Pre-tag: don't push the tag; revert the `main` merge. Post-publish (irreversible):
 
 ```bash
-npm deprecate '@diamondslab/hardhat-multichain@X.Y.Z' 'Broken release — use X.Y.(Z+1)'
+npm deprecate '@geniusventures/hardhat-multichain@X.Y.Z' 'Broken release — use X.Y.(Z+1)'
 # fix forward: repeat with X.Y.(Z+1)
-npm dist-tag add @diamondslab/hardhat-multichain@X.Y.(Z+1) latest
+npm dist-tag add @geniusventures/hardhat-multichain@X.Y.(Z+1) latest
 ```
 
 ## 8. Post-release — [Eng] + [Owner]
 
 - [ ] Bump the monorepo root submodule pointer; root builds green; consumer-green.
 - [ ] **[Owner] Deprecate the unscoped package** (§D, M2 only): approve the message, then
-      `npm deprecate 'hardhat-multichain@*' 'Renamed: this package is now @diamondslab/hardhat-multichain — see https://github.com/DiamondsLab/hardhat-multichain#migrating-from-hardhat-multichain'`.
+      `npm deprecate 'hardhat-multichain@*' 'Renamed: this package is now @geniusventures/hardhat-multichain — see https://github.com/GeniusVentures/hardhat-multichain#migrating-from-hardhat-multichain'`.
       Verify the banner renders and `npm install hardhat-multichain` warns. (Reversible:
       `npm deprecate 'hardhat-multichain@*' ''`.)
 - [ ] (Optional) GitHub Release with the `[X.Y.Z]` changelog section.

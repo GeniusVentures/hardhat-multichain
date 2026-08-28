@@ -1,30 +1,30 @@
-# @diamondslab/hardhat-multichain
+# @geniusventures/hardhat-multichain
 
-[![npm version](https://img.shields.io/npm/v/@diamondslab/hardhat-multichain.svg)](https://www.npmjs.com/package/@diamondslab/hardhat-multichain)
-[![Build Status](https://github.com/DiamondsLab/hardhat-multichain/workflows/CI/badge.svg)](https://github.com/DiamondsLab/hardhat-multichain/actions)
+[![npm version](https://img.shields.io/npm/v/@geniusventures/hardhat-multichain.svg)](https://www.npmjs.com/package/@geniusventures/hardhat-multichain)
+[![Build Status](https://github.com/GeniusVentures/hardhat-multichain/workflows/CI/badge.svg)](https://github.com/GeniusVentures/hardhat-multichain/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A professional Hardhat plugin for launching and managing multiple forked blockchain networks simultaneously. Perfect for cross-chain development, testing, and multi-network deployments.
 
 ## Migrating from `hardhat-multichain`
 
-This package was previously published as the unscoped `hardhat-multichain` (latest: `1.0.6`). Starting with **v1.1.0** it is published as **`@diamondslab/hardhat-multichain`**. The unscoped package is **deprecated** and will receive **no further releases**.
+This package was previously published as the unscoped `hardhat-multichain` (latest: `1.0.6`). Starting with **v1.1.0** it is published as **`@geniusventures/hardhat-multichain`**. The unscoped package is **deprecated** and will receive **no further releases**.
 
 To migrate:
 
 ```bash
 # npm
-npm uninstall hardhat-multichain && npm install @diamondslab/hardhat-multichain
+npm uninstall hardhat-multichain && npm install @geniusventures/hardhat-multichain
 
 # yarn
-yarn remove hardhat-multichain && yarn add @diamondslab/hardhat-multichain
+yarn remove hardhat-multichain && yarn add @geniusventures/hardhat-multichain
 ```
 
 Then update the plugin import in your `hardhat.config.ts`:
 
 ```diff
 -import "hardhat-multichain";
-+import "@diamondslab/hardhat-multichain";
++import "@geniusventures/hardhat-multichain";
 ```
 
 And any deep or named imports:
@@ -32,8 +32,8 @@ And any deep or named imports:
 ```diff
 -import { getProvider, multichain } from "hardhat-multichain";
 -import ChainManager from "hardhat-multichain/dist/src/chainManager";
-+import { getProvider, multichain } from "@diamondslab/hardhat-multichain";
-+import ChainManager from "@diamondslab/hardhat-multichain/dist/chainManager";
++import { getProvider, multichain } from "@geniusventures/hardhat-multichain";
++import ChainManager from "@geniusventures/hardhat-multichain/dist/chainManager";
 ```
 
 Note: the compiled output is now flat under `dist/` (no `dist/src/`), and the package defines an `exports` map (`.`, `./dist/*`, `./package.json`). See [CHANGELOG.md](CHANGELOG.md) for the full list of packaging changes in 1.1.0.
@@ -58,13 +58,13 @@ Note: the compiled output is now flat under `dist/` (no `dist/src/`), and the pa
 ## 📦 Installation
 
 ```bash
-npm install @diamondslab/hardhat-multichain
+npm install @geniusventures/hardhat-multichain
 ```
 
 Or with Yarn:
 
 ```bash
-yarn add @diamondslab/hardhat-multichain
+yarn add @geniusventures/hardhat-multichain
 ```
 
 ## 🛠️ Setup
@@ -72,7 +72,7 @@ yarn add @diamondslab/hardhat-multichain
 ### 1. Import the plugin in your `hardhat.config.ts`
 
 ```typescript
-import "@diamondslab/hardhat-multichain";
+import "@geniusventures/hardhat-multichain";
 
 const config: HardhatUserConfig = {
   // Your existing config...
@@ -136,8 +136,8 @@ npx hardhat test-multichain --chains ethereum,polygon --logs ./logs
 ### Programmatic Usage
 
 ```typescript
-import { getProvider, getMultichainProviders } from "@diamondslab/hardhat-multichain";
-import ChainManager from "@diamondslab/hardhat-multichain/dist/chainManager";
+import { getProvider, getMultichainProviders } from "@geniusventures/hardhat-multichain";
+import ChainManager from "@geniusventures/hardhat-multichain/dist/chainManager";
 
 // Get a specific provider
 const ethereumProvider = getProvider("ethereum");
@@ -161,7 +161,7 @@ await ChainManager.cleanup();
 
 ```typescript
 import { expect } from "chai";
-import { getProvider } from "@diamondslab/hardhat-multichain";
+import { getProvider } from "@geniusventures/hardhat-multichain";
 
 describe("Cross-chain Contract Tests", function () {
   let ethereumProvider: JsonRpcProvider;
@@ -239,7 +239,7 @@ The core class for managing blockchain networks.
 The plugin includes comprehensive error handling:
 
 ```typescript
-import { ChainConfigError, NetworkConnectionError } from "@diamondslab/hardhat-multichain";
+import { ChainConfigError, NetworkConnectionError } from "@geniusventures/hardhat-multichain";
 
 try {
   await ChainManager.setupChains(["ethereum"], config);
@@ -396,8 +396,8 @@ Error: Missing required rpcUrl for ethereum
 ### Getting Help
 
 - 📖 [Documentation](docs/)
-- 🐛 [Issue Tracker](https://github.com/DiamondsLab/hardhat-multichain/issues)
-- 💬 [Discussions](https://github.com/DiamondsLab/hardhat-multichain/discussions)
+- 🐛 [Issue Tracker](https://github.com/GeniusVentures/hardhat-multichain/issues)
+- 💬 [Discussions](https://github.com/GeniusVentures/hardhat-multichain/discussions)
 
 #### Parameters
 

@@ -16,11 +16,11 @@ Security fixes are provided for the latest published minor release line.
 Report them privately via **GitHub's private vulnerability reporting**:
 
 1. Go to the repository's **Security** tab → **Report a vulnerability**
-   (https://github.com/DiamondsLab/hardhat-multichain/security/advisories/new).
+   (https://github.com/GeniusVentures/hardhat-multichain/security/advisories/new).
 2. Describe the issue, affected versions, and reproduction steps.
 
 If you cannot use private reporting, open a minimal, **non-sensitive** issue at
-<https://github.com/DiamondsLab/hardhat-multichain/issues> asking a maintainer to open a
+<https://github.com/GeniusVentures/hardhat-multichain/issues> asking a maintainer to open a
 private channel — do **not** include exploit details there.
 
 We aim to acknowledge reports within a few business days and will coordinate a fix and

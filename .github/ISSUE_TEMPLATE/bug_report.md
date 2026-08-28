@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a problem with @diamondslab/hardhat-multichain
+about: Report a problem with @geniusventures/hardhat-multichain
 title: "[Bug] "
 labels: bug
 ---
@@ -22,7 +22,7 @@ What you expected to happen.
 
 ## Environment
 
-- `@diamondslab/hardhat-multichain` version:
+- `@geniusventures/hardhat-multichain` version:
 - `hardhat` version:
 - `ethers` version:
 - Node.js version:
