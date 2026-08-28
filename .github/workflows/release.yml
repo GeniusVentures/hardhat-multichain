@@ -52,4 +52,4 @@ jobs:
           echo "npm: $(npm --version)"
           echo "OIDC id-token URL present: ${ACTIONS_ID_TOKEN_REQUEST_URL:+YES}"
           echo "registry: $(npm config get registry)"
-          npm publish --provenance --access public
+          npm publish --provenance --access public --tag latest
